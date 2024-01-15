@@ -1,0 +1,9 @@
+var gr = new GlideRecord('incident');
+gr.addQuery('category', 'hardware');
+gr.addQuery('active', true);
+gr.setLimit(10);
+gr.query();
+
+while(gr.next()) {
+gs.info(gr.number + ' | ' + gr.category + ' | ' + gr.sys_created_on + ' | ' + gr.short_description)
+}
